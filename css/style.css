@@ -186,7 +186,8 @@ body {
     margin-top: revert;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 6fr 7fr;
+    /* You can omit the bottom line. there is no need. */
+    grid-template-rows: auto auto;
     grid-template-areas:
       "community community"
       "subscription why-us";
