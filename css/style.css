@@ -1,0 +1,240 @@
+/* Colors */
+:root {
+  --primary-cyan: hsl(179, 62%, 30%);
+  --primary-bright-yellow: hsl(71, 98%, 34%);
+  --neutral-light-gray: hsl(204, 43%, 93%);
+  --neutral-grayish-blue: hsl(218, 22%, 67%);
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+p,
+li {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+/* First Mobile */
+
+body {
+  background-color: var(--neutral-light-gray);
+  font-family: "Karla", sans-serif;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1.4rem;
+  place-content: center;
+  place-items: center;
+  min-height: 100%;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.main-content {
+  max-width: calc(311 / 16 * 1rem);
+  margin-top: 16px;
+}
+
+.community-banner {
+  background-color: hsl(0, 00%, 100%);
+  padding: 28px 24px 32px;
+  border-radius: 8px 8px 0 0;
+}
+
+.community-banner__title {
+  font-size: calc(20 / 16 * 1rem);
+  color: var(--primary-cyan);
+  letter-spacing: -0.25px;
+}
+
+.community-banner__guarantee {
+  margin-top: 24px;
+  font-size: calc(15 / 16 * 1rem);
+  letter-spacing: -0.19px;
+  line-height: calc(20 / 16);
+  font-weight: 700;
+  color: var(--primary-bright-yellow);
+}
+
+.community-banner__description {
+  margin-top: 16px;
+  font-size: calc(14 / 16 * 1rem);
+  letter-spacing: -0.17px;
+  line-height: calc(26 / 16);
+  color: var(--neutral-grayish-blue);
+}
+
+.subscription {
+  background-color: var(--primary-cyan);
+  padding: 24px;
+}
+
+.subscription__title {
+  font-size: calc(18 / 16 * 1rem);
+  color: hsl(0, 0%, 100%);
+  letter-spacing: -0.22px;
+}
+
+.subscription__price-container {
+  margin-top: 18px;
+  display: flex;
+  gap: 11px;
+  align-items: center;
+}
+
+.subscription__price-amount {
+  font-size: calc(32 / 16 * 1rem);
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
+  letter-spacing: -0.4px;
+}
+
+.subscription__price-period {
+  line-height: calc(26 / 16);
+  color: hsla(0, 0%, 100%, 0.5);
+  letter-spacing: -0.2px;
+}
+
+.subscription__offer {
+  line-height: calc(26 / 16);
+  letter-spacing: -0.2px;
+  color: hsl(0, 0%, 100%);
+}
+
+.subscription__sign-up {
+  margin-top: 26px;
+  border: none;
+  border-radius: 5px;
+  color: hsl(0, 0%, 100%);
+  padding: 15px 102px;
+  letter-spacing: -0.2px;
+  background-color: var(--primary-bright-yellow);
+  font-weight: bold;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.subscription__sign-up:hover,
+.subscription__sign-up:focus {
+  cursor: pointer;
+  background-color: hsl(71, 97%, 46%);
+}
+
+.why-us {
+  padding: 24px;
+  background-color: var(--primary-cyan);
+  opacity: calc(1 - 0.1519);
+  color: hsl(0, 0%, 100%);
+  border-radius: 0 0 8px 8px;
+}
+
+.why-us__title {
+  font-size: calc(18 / 16 * 1rem);
+  letter-spacing: -0.22px;
+}
+
+.why-us__benefits {
+  margin-top: 18px;
+  opacity: 0.6;
+  line-height: calc(20 / 16);
+  letter-spacing: -0.17px;
+  font-size: calc(14 / 16 * 1rem);
+}
+
+.why-us__benefits-item {
+  margin-top: 4px;
+}
+
+/* Footer */
+.attribution {
+  font-size: calc(11 / 16 * 1rem);
+  padding: 0 4px;
+  background-color: var(--primary-bright-yellow);
+  text-align: center;
+  border-radius: 4px 4px 0 0;
+}
+.attribution a {
+  color: hsl(225, 22%, 96%);
+}
+
+/* Desktop */
+@media (min-width: calc(645/16* 1rem)) {
+  .main-content {
+    max-width: calc(635 / 16 * 1rem);
+    margin-top: revert;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 6fr 7fr;
+    grid-template-areas:
+      "community community"
+      "subscription why-us";
+  }
+
+  .community-banner {
+    grid-area: community;
+    padding: 40px;
+  }
+
+  .community-banner__title {
+    font-size: calc(24 / 16 * 1rem);
+  }
+
+  .community-banner__guarantee {
+    font-size: calc(18 / 16 * 1rem);
+  }
+
+  .community-banner__description {
+    margin-top: 11px;
+    font-size: revert;
+    letter-spacing: -0.2px;
+  }
+
+  .subscription {
+    grid-area: subscription;
+    padding: 40px;
+    border-radius: 0 0 0 8px;
+  }
+
+  .subscription__sign-up {
+    width: calc(237 / 16 * 1rem);
+    padding: 15px 89px;
+  }
+
+  .why-us {
+    grid-area: why-us;
+    border-radius: 0 0 8px 0;
+    padding: 40px;
+  }
+
+  .attribution {
+    font-size: calc(14 / 16 * 1rem);
+  }
+}
